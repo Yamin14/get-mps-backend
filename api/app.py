@@ -10,6 +10,11 @@ CORS(app)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+#home
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({'message': 'Welcome to the Stock Data API'}), 200
+
 #get stock data
 @app.route('/get_stock_data', methods=['POST'])
 def get_stock_data():
